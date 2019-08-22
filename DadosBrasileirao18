@@ -1,0 +1,10 @@
+import requests
+from bs4 import BeautifulSoup
+
+r = requests.get('https://especiais.tribunapr.com.br/futebol/tabela-brasileiro-serie-a/')
+
+soup = BeautifulSoup(r.text, 'lxml')
+
+tag = soup.tr.text
+
+print(tag)
